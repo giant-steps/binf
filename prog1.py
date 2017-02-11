@@ -5,7 +5,12 @@ import sys
 
 
 #function definitions
-def
+def overlap:
+    a = #key in fasta_dict
+    b = #key in fasta_dict
+    edges = ()     #list of ordered pairs of edges
+    if fasta_dict[a][-3:] == fasta_dict[b]b[:3]:
+        edges.add('(' + str(a) + ', ' + str(b) + ')')
 
 
 ##main function definition
