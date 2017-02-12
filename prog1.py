@@ -1,5 +1,7 @@
 ##this will answer the following problem on Rosalind: "Overlap Graphs"
 
+## to run, navigate to correct directory, then run: >python prog1.py sample.txt answers.txt k
+
 ##import statements
 import sys
 
@@ -17,7 +19,7 @@ def overlap(fastas,k):
     for f in fastas:
 
 
-    if fasta_dict[a][-3:] == fasta_dict[b]b[:3]:
+    if fastas[a][-3:] == fastas[b][:3]:
         edges.add('(' + str(a) + ', ' + str(b) + ')')
 
     return edges
