@@ -18,7 +18,7 @@ def overlap(fastas,k):
         for i in fastas:
             if hold != i:
                 if fastas[hold][-k:] == fastas[i][:k]:
-                    edges.append('(' + str(hold) + ', ' + str(i) + ')')
+                    edges.append(str(hold) + ' ' + str(i))
 
     return edges
 
