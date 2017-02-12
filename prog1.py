@@ -13,14 +13,12 @@ def overlap(fastas,k):
 
     edges = ()  # list of ordered pairs of edges
 
-    a =         #key in fasta_dict
-    b =         #key in fasta_dict
-
     for f in fastas:
-
-
-    if fastas[a][-3:] == fastas[b][:3]:
-        edges.add('(' + str(a) + ', ' + str(b) + ')')
+        hold = f            ##unnecessary, can leave hold as f
+        for i in fastas:
+            if hold != i:
+                if fastas[hold][-k:] == fastas[i][:k]:
+                    edges.add('(' + str(hold) + ', ' + str(i) + ')')
 
     return edges
 
