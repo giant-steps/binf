@@ -7,6 +7,15 @@ import sys
 
 #function definitions
 def rabbits(n,k):
+    herd = 1
+    breed = 0
+    while n > 0:
+        n -= 1
+        young = breed * k
+        breed = herd
+        herd = young + breed
+
+    return herd
 
 
 ##main function definition
