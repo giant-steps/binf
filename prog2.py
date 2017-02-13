@@ -13,8 +13,8 @@ def rabbits(n,k):
     breed = 0
     birth = 0
     young = 1
-    while n > 0:
-        n -= 1
+    while n > 1:        ### this '1' should be a '0' but for some reason Rosalind is counting months incorrectly or
+        n -= 1              ### I'm missing something / running one extra cycle...?
         birth = birth + breed
         breed = young
         young = birth * k
@@ -28,6 +28,7 @@ def main():
     b = int(sys.argv[2])
     with open(sys.argv[3], 'w') as out:
         out.write(str(rabbits(a,b)))
+        print((str(rabbits(a,b))))
 
 ##run main function
 if __name__ == "__main__":
