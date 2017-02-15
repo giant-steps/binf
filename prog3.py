@@ -1,3 +1,6 @@
+## answers CALCULATING PROTEIN MASS on Rosalind
+
+## given molecular weights of amino acid residues, adds up the total weight of a peptide given 1-letter abbreviations
 
 ## import statements
 import sys
@@ -32,4 +35,3 @@ def main():
 ## run main function
 if __name__ == "__main__":
     main()
-
