@@ -17,9 +17,28 @@ def profilematrix(fastadict):
     G.append('G:')
     T.append('T:')
     for i in fastadict:
-        print('this is one of the sequences: ' + str(fastadict[i]))     ###########################
         counter = 0
         while counter < len(fastadict[i]):
+            ######## NEW SECTION -- MAY NOT WORK --
+            ######## there is a more efficient way of doing this -- this unnecessarily checks lists for zeros for every
+                ########## sequence in fasta file, instead of just once
+            try:
+                v = A[(counter + 1)]
+            except IndexError:
+                A.append(0)
+            try:
+                v = C[(counter + 1)]
+            except IndexError:
+                C.append(0)
+            try:
+                v = G[(counter + 1)]
+            except IndexError:
+                G.append(0)
+            try:
+                v = T[(counter + 1)]
+            except IndexError:
+                T.append(0)
+            ###########################
             if fastadict[i][counter] == 'A':
                 try:
                     A[(counter + 1)] += 1
@@ -41,9 +60,6 @@ def profilematrix(fastadict):
                 except IndexError:
                     T.append(1)
             counter += 1
-            ################
-            print(' '.join(str(x) for x in A) + '\n' + ' '.join(str(x) for x in C) + '\n' + ' '.join(str(x) for x in G) + '\n' + ' '.join(str(x) for x in T))               #######################
-            ################
     return ' '.join(str(x) for x in A) + '\n' + ' '.join(str(x) for x in C) + '\n' + ' '.join(str(x) for x in G) + '\n' + ' '.join(str(x) for x in T)
 
 def consensus(matrix):
@@ -70,11 +86,10 @@ def main():
                     sequences[str(idstore[1:])] = line
         final = profilematrix(sequences)
         final2 = consensus(final)    ##line by line
-        print('this is matrix test: ' + str(final))         #########################################
         print(str(final2))
         print(str(final))
         ans.write(str(final2))
-        ans.write(final)  ## may have to modify formatting here, write to output file
+        ans.write(final)
 
 ## run main function
 if __name__ == "__main__":
