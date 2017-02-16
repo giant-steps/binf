@@ -7,41 +7,42 @@
 import sys
 
 ## function definitions
-def consensus(fastadict):
+def profilematrix(fastadict):
     A = []
     C = []
     G = []
     T = []
-    A[0] = 'A:'
-    C[0] = 'C:'
-    G[0] = 'G:'
-    T[0] = 'T:'
+    A.append('A:')
+    C.append('C:')
+    G.append('G:')
+    T.append('T:')
     for i in fastadict:
         counter = 0
-        while counter < len(fastadict[i]):      #############
+        while counter < len(fastadict[i]):
             if fastadict[i][counter] == 'A':
                 try:
                     A[(counter + 1)] += 1
-                except KeyError:
+                except IndexError:
                     A[(counter + 1)] = 1
             elif fastadict[i][counter] == 'C':
                 try:
                     C[(counter + 1)] += 1
-                except KeyError:
+                except IndexError:
                     C[(counter + 1)] = 1
             elif fastadict[i][counter] == 'G':
                 try:
                     G[(counter + 1)] += 1
-                except KeyError:
+                except IndexError:
                     G[(counter + 1)] = 1
             elif fastadict[i][counter] == 'T':
                 try:
                     T[(counter + 1)] += 1
-                except KeyError:
+                except IndexError:
                     T[(counter + 1)] = 1
             counter += 1
 
-
+def consensus(matrix):
+    l = matrix ##########################
 
 ## main function definition
 def main():
@@ -62,10 +63,13 @@ def main():
                     sequences[str(idstore[1:])] += line
                 except KeyError:
                     sequences[str(idstore[1:])] = line
-        final = consensus(sequences)
+        final = profilematrix(sequences)
+        final2 = consensus(final)    ##line by line
+        print('this is matrix test: ' + str(final))         #########################################
+        print(str(final2))
         print(str(final))
-        ans.write(final)        ## may have to modify formatting here, write to output file
-                                    ##line by line
+        ans.write(str(final2))
+        ans.write(final)  ## may have to modify formatting here, write to output file
 
 ## run main function
 if __name__ == "__main__":
