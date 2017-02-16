@@ -8,7 +8,39 @@ import sys
 
 ## function definitions
 def consensus(fastadict):
-    
+    A = []
+    C = []
+    G = []
+    T = []
+    A[0] = 'A:'
+    C[0] = 'C:'
+    G[0] = 'G:'
+    T[0] = 'T:'
+    for i in fastadict:
+        counter = 0
+        while counter < len(fastadict[i]):      #############
+            if fastadict[i][counter] == 'A':
+                try:
+                    A[(counter + 1)] += 1
+                except KeyError:
+                    A[(counter + 1)] = 1
+            elif fastadict[i][counter] == 'C':
+                try:
+                    C[(counter + 1)] += 1
+                except KeyError:
+                    C[(counter + 1)] = 1
+            elif fastadict[i][counter] == 'G':
+                try:
+                    G[(counter + 1)] += 1
+                except KeyError:
+                    G[(counter + 1)] = 1
+            elif fastadict[i][counter] == 'T':
+                try:
+                    T[(counter + 1)] += 1
+                except KeyError:
+                    T[(counter + 1)] = 1
+            counter += 1
+
 
 
 ## main function definition
@@ -38,3 +70,4 @@ def main():
 ## run main function
 if __name__ == "__main__":
     main()
+
