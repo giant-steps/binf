@@ -62,8 +62,75 @@ def profilematrix(fastadict):
             counter += 1
     return ' '.join(str(x) for x in A) + '\n' + ' '.join(str(x) for x in C) + '\n' + ' '.join(str(x) for x in G) + '\n' + ' '.join(str(x) for x in T)
 
-def consensus(matrix):
-    l = matrix ##########################
+def consensus(fastadict):
+    A = []
+    C = []
+    G = []
+    T = []
+    A.append('A:')
+    C.append('C:')
+    G.append('G:')
+    T.append('T:')
+    for i in fastadict:
+        counter = 0
+        while counter < len(fastadict[i]):
+            ######## NEW SECTION -- MAY NOT WORK --
+            ######## there is a more efficient way of doing this -- this unnecessarily checks lists for zeros for every
+                ########## sequence in fasta file, instead of just once
+            try:
+                v = A[(counter + 1)]
+            except IndexError:
+                A.append(0)
+            try:
+                v = C[(counter + 1)]
+            except IndexError:
+                C.append(0)
+            try:
+                v = G[(counter + 1)]
+            except IndexError:
+                G.append(0)
+            try:
+                v = T[(counter + 1)]
+            except IndexError:
+                T.append(0)
+            ###########################
+            if fastadict[i][counter] == 'A':
+                try:
+                    A[(counter + 1)] += 1
+                except IndexError:
+                    A.append(1)
+            elif fastadict[i][counter] == 'C':
+                try:
+                    C[(counter + 1)] += 1
+                except IndexError:
+                    C.append(1)
+            elif fastadict[i][counter] == 'G':
+                try:
+                    G[(counter + 1)] += 1
+                except IndexError:
+                    G.append(1)
+            elif fastadict[i][counter] == 'T':
+                try:
+                    T[(counter + 1)] += 1
+                except IndexError:
+                    T.append(1)
+            counter += 1
+
+    count = 1
+    common = ''
+    while count < len(A):       ############# CHECK THIS
+        base = 'A'
+        if C[count] > A[count]:     ###### there's gotta be some max function or something to do this more efficiently
+            base = 'C'
+        if G[count] > A[count] and G[count] > C[count]:
+            base = 'G'
+        if T[count] > A[count] and T[count] > C[count] and T[count] > G[count]:
+            base = 'T'
+        common += base
+        count += 1
+
+    return common
+
 
 ## main function definition
 def main():
@@ -85,10 +152,8 @@ def main():
                 except KeyError:
                     sequences[str(idstore[1:])] = line
         final = profilematrix(sequences)
-        final2 = consensus(final)    ##line by line
-        print(str(final2))
-        print(str(final))
-        ans.write(str(final2))
+        final2 = consensus(sequences)    ##line by line
+        ans.write(str(final2) + '\n')
         ans.write(final)
 
 ## run main function
