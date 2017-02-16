@@ -17,29 +17,34 @@ def profilematrix(fastadict):
     G.append('G:')
     T.append('T:')
     for i in fastadict:
+        print('this is one of the sequences: ' + str(fastadict[i]))     ###########################
         counter = 0
         while counter < len(fastadict[i]):
             if fastadict[i][counter] == 'A':
                 try:
                     A[(counter + 1)] += 1
                 except IndexError:
-                    A[(counter + 1)] = 1
+                    A.append(1)
             elif fastadict[i][counter] == 'C':
                 try:
                     C[(counter + 1)] += 1
                 except IndexError:
-                    C[(counter + 1)] = 1
+                    C.append(1)
             elif fastadict[i][counter] == 'G':
                 try:
                     G[(counter + 1)] += 1
                 except IndexError:
-                    G[(counter + 1)] = 1
+                    G.append(1)
             elif fastadict[i][counter] == 'T':
                 try:
                     T[(counter + 1)] += 1
                 except IndexError:
-                    T[(counter + 1)] = 1
+                    T.append(1)
             counter += 1
+            ################
+            print(' '.join(str(x) for x in A) + '\n' + ' '.join(str(x) for x in C) + '\n' + ' '.join(str(x) for x in G) + '\n' + ' '.join(str(x) for x in T))               #######################
+            ################
+    return ' '.join(str(x) for x in A) + '\n' + ' '.join(str(x) for x in C) + '\n' + ' '.join(str(x) for x in G) + '\n' + ' '.join(str(x) for x in T)
 
 def consensus(matrix):
     l = matrix ##########################
