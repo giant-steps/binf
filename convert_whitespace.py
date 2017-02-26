@@ -8,21 +8,19 @@ def main():
     with open(sys.argv[1], 'r') as start, open(sys.argv[2], 'w') as finish:
         total_list = []
         for line in start:
-            linehold = []
             line = line.rstrip()
-            #print(line)     ############
-            linehold.append(line.split())     ### str?
-            print(linehold)     ##########
+            line = line.split()
 
-            #total_list[0:0] = linehold
-            for i in linehold:
+            for i in line:
                 total_list.append(i)
 
-            print(total_list)       #######################
+        #print('this is total list')     ##################
+        #print(total_list)                  ######################
+        print(str(len(total_list)))
 
         k = 0
         while k < len(total_list):
-            finish.write(total_list[k] + '\t' + total_list[k+1])
+            finish.write(total_list[k] + '\t' + total_list[k+1] + '\n')
             k += 2
 
 
