@@ -1,0 +1,49 @@
+
+#this program will answer the Rosalind problem "Finding a Shared Motif
+
+## import statements
+import sys
+
+## function definitions
+def shared(a):
+    test = a[0]     ## test everything against 1st string
+    count = 1       ## begin by testing 2nd string against 1st, then move to 3rd, etc.
+    while count < len(a):   ## cycle thru all strings in list:
+        if test in a[count]:       ## if this substring of test is in
+            count += 1
+
+        else:
+            count = 1   # shifts or shrinks test & starts back at beginning (of 'a')
+            if      ## if not at end then shift, else shrink by 1 & move to beginning !!!!!
+
+    return test
+
+
+
+## main function definition
+def main():
+    fasta_dict = {}
+    with open(sys.argv[1], 'r') as input:
+        for line in input:  # this 'for' loop reads the multifasta input file, line by line, and stores the sequences in a dictionary,
+            line = line.rstrip()  # with the fasta identifiers as the dictionary keys
+            if line == '':
+                idstore = 'empty'
+                continue
+            elif line.startswith('>'):
+                idstore = line
+                continue
+            elif idstore.startswith('>'):           #this 'try, except' setup helps if there are returns interpreted in a multi-line DNA sequence
+                try:
+                    if fasta_dict[str(idstore[1:])] == 1:
+                        x = 'do nothing'
+                    fasta_dict[str(idstore[1:])] += line
+                except KeyError:
+                    fasta_dict[str(idstore[1:])] = line
+
+    ans = shared(list(fasta_dict.values()))
+    print(ans)      ###########################################
+
+## run main function
+if __name__ == "__main__":
+    main()
+
