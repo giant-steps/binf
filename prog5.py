@@ -12,9 +12,14 @@ def shared(a):
         if test in a[count]:       ## if this substring of test is in
             count += 1
 
-        else:
+#####   FINISHED EXCEPT FOR THIS SECTION, I THINK   ########
+        else:   ## if this version of test is not in one of them, modify & start again
             count = 1   # shifts or shrinks test & starts back at beginning (of 'a')
+
             if      ## if not at end then shift, else shrink by 1 & move to beginning !!!!!
+
+            else:
+##################
 
     return test
 
