@@ -7,7 +7,11 @@ import sys
 ## function definitions
 def shared(a):
     test = a[0]     ## test everything against 1st string
+    x = 0           #########
+    y = len(a[0]) - 1   #######
     count = 1       ## begin by testing 2nd string against 1st, then move to 3rd, etc.
+    frame = len(a[0])       ########
+
     while count < len(a):   ## cycle thru all strings in list:
         if test in a[count]:       ## if this substring of test is in
             count += 1
@@ -16,9 +20,16 @@ def shared(a):
         else:   ## if this version of test is not in one of them, modify & start again
             count = 1   # shifts or shrinks test & starts back at beginning (of 'a')
 
-            if      ## if not at end then shift, else shrink by 1 & move to beginning !!!!!
-
+            if y < len(a[0]):       ## if not at end then shift, else shrink by 1 & move to beginning !!!!!
+                x += 1
+                y += 1
             else:
+                x = 0
+                frame -= 1
+                y = len(frame)
+
+        test = a[0][x:y]       ### I think this works here...it will reset test even if it needs to stay the same, but
+                                ### x and y will remain unchanged so it will stay the same
 ##################
 
     return test
