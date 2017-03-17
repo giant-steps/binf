@@ -1,5 +1,8 @@
 
-#this program will answer the Rosalind problem "Finding a Shared Motif
+#this program will answer the Rosalind problem "Finding a Shared Motif"
+
+## KEEP IN MIND this will give one possible answer...first answer found...could be other shared motifs of equal length
+        ## to find all of these motifs, some modification to code is necessary (shouldn't be too difficult)
 
 ## import statements
 import sys
@@ -16,7 +19,6 @@ def shared(a):
         if test in a[count]:       ## if this substring of test is in
             count += 1
 
-#####   FINISHED EXCEPT FOR THIS SECTION, I THINK   ########
         else:   ## if this version of test is not in one of them, modify & start again
             count = 1   # shifts or shrinks test & starts back at beginning (of 'a')
 
@@ -30,7 +32,6 @@ def shared(a):
 
         test = a[0][x:y]       ### I think this works here...it will reset test even if it needs to stay the same, but
                                 ### x and y will remain unchanged so it will stay the same
-##################
 
     return test
 
