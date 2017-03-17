@@ -26,7 +26,7 @@ def shared(a):
             else:
                 x = 0
                 frame -= 1
-                y = len(frame)
+                y = frame
 
         test = a[0][x:y]       ### I think this works here...it will reset test even if it needs to stay the same, but
                                 ### x and y will remain unchanged so it will stay the same
@@ -39,7 +39,7 @@ def shared(a):
 ## main function definition
 def main():
     fasta_dict = {}
-    with open(sys.argv[1], 'r') as input:
+    with open(sys.argv[1], 'r') as input, open(sys.argv[2], 'w') as out:
         for line in input:  # this 'for' loop reads the multifasta input file, line by line, and stores the sequences in a dictionary,
             line = line.rstrip()  # with the fasta identifiers as the dictionary keys
             if line == '':
@@ -56,8 +56,10 @@ def main():
                 except KeyError:
                     fasta_dict[str(idstore[1:])] = line
 
-    ans = shared(list(fasta_dict.values()))
-    print(ans)      ###########################################
+        ans = shared(list(fasta_dict.values()))
+        out.write(ans)
+        print(ans)      ###########################################
+
 
 ## run main function
 if __name__ == "__main__":
