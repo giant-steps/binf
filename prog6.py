@@ -8,13 +8,24 @@ import sys
 #function definitions
 def factorial(n):
     a = 1
+    n = int(n)
     while n > 0:
         a = a * n
         n -= 1
     return a
 
 def perm(n):
-    return 'not complete'
+    poss = ''
+    sett = []
+    ran
+
+
+
+
+
+
+
+        poss += ' + \n'
 
 #main function
 def main():
