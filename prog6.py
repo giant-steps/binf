@@ -16,16 +16,34 @@ def factorial(n):
 
 def perm(n):
     poss = ''
-    sett = []
-    ran
+
+    count = factorial(n)
+    sett = dict(range(n))
+
+    while count > 0:
+        count -= 1
+        seq = {}
+
+        if u in seq.values() == False:
+            seq.append(u)
+
+        ###should keep dictionaries and check if matches any existing -- if this permutation doesn't match any existing
+            ###dictionaries, then proceed
+
+        poss += str('\t'.join(v for v in seq)) + '\n'
+    return poss
 
 
+    #start a variable at factorial(n) -- this will tell you how many permutations you need
+    #use a -= 1 inside a while loop: while >0: -- cycle thru
+    #use an if statement: if this value that I want to put as the third element of the new sequence is not equal to
+        #the third element of any existing sequences, then add
+    #use dictionaries to hold sequences
+    #one dictionary exists at a time (within while loop), output gets added to poss each cycle
 
 
+    b = list(range(n))      ##need to add in order
 
-
-
-        poss += ' + \n'
 
 #main function
 def main():
