@@ -19,13 +19,15 @@ def perm(n):
 
     count = factorial(n)
     sett = dict(range(n))
+    check =
 
     while count > 0:
         count -= 1
         seq = {}
 
-        if u in seq.values() == False:
-            seq.append(u)
+        for u in sett:
+            if u in seq.values() == False:
+                seq.append(u)
 
         ###should keep dictionaries and check if matches any existing -- if this permutation doesn't match any existing
             ###dictionaries, then proceed
