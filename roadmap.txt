@@ -1,0 +1,18 @@
+
+write a generalized program to do the following: 
+
+read excel or .csv files into python, store in list of numpy arrays (or array, read more about best way)
+	-apparently, list of arrays is less strain on RAM than higher-dimensional array, read more
+	
+perform functions on this data structure
+	-use map function, possibly lambda
+	
+
+weight variables with degree of predictive power, used to modify overall score
+
+specialize to titanic problem
+	
+
+Links: 
+https://www.datacamp.com/community/tutorials/python-excel-tutorial
+
