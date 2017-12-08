@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa738c9d-88bd-488b-82c6-034c5e55fe4c" name="Default" comment="" />
+    <list default="true" id="aa738c9d-88bd-488b-82c6-034c5e55fe4c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog14.py" afterPath="$PROJECT_DIR$/prog14.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,9 +51,11 @@
       <file leaf-file-name="prog14.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog14.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="782">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding>
+                <element signature="e#165#183#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,6 +89,7 @@
         <option value="$PROJECT_DIR$/prog7.py" />
         <option value="$PROJECT_DIR$/.idea/prog13.py" />
         <option value="$PROJECT_DIR$/prog13.py" />
+        <option value="$PROJECT_DIR$/prog15.py" />
         <option value="$PROJECT_DIR$/prog14.py" />
       </list>
     </option>
@@ -568,11 +574,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prog15.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prog14.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="782">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#165#183#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
