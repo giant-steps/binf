@@ -8,8 +8,11 @@ b = (2,2,2,2,3,3,3,3,3)
 aa = np.array(a)
 bb = np.array(b)
 
-c = np.concatenate([a,b],axis=0)
-d = np.array_split(c,10,axis=1)
 
-print(str(d))
+c = np.vstack((aa,bb))
 
+print(str(c))
+
+d = c[0][7]
+
+print(d)
